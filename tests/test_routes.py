@@ -166,6 +166,8 @@ class TestProductRoutes(TestCase):
     #
     # ADD YOUR TEST CASES HERE
     #
+    def test_get_product(self):
+        
 
     ######################################################################
     # Utility functions
