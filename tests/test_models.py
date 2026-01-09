@@ -145,9 +145,10 @@ class TestProductModel(unittest.TestCase):
     def test_list_all_products(self):
         """It should list all products in db"""
         self.assertEqual(len(Product.all()), 0)
-        for x in range(5):
+        for var_x in range(5):
             product = ProductFactory()
             product.create()
+            print(var_x)
         self.assertEqual(len(Product.all()), 5)
 
     def test_find_by_name(self):
@@ -163,6 +164,7 @@ class TestProductModel(unittest.TestCase):
             self.assertEqual(product.name, first_name)
 
     def test_find_product_by_availability(self):
+        """IT should find product by availability"""
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
@@ -174,6 +176,7 @@ class TestProductModel(unittest.TestCase):
             self.assertEqual(product.available, first_av)
 
     def test_find_product_by_cat(self):
+        """IT should find product by category"""
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
